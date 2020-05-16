@@ -6,7 +6,7 @@ import (
 )
 /*Usuario es el modelo de usuarioa de la base de datos*/
 type Uusario struct {
-	ID primitive.ObjectID `bson: "_id, omitempty" json: "id"`
+	ID primitive.ObjectID `json:"id,omitempty" bson:"_id,omitempty"`
 	Nombre string `bson: "_nombre" json: "nombre, omitempty"`
 	Apellidos string `bson: "apellidos" json: "apellidos, omitempty"`
 	FechaNacimiento time.Time `bson: "fechaNacimiento" json: "fechaNacimiento, omitempty"`

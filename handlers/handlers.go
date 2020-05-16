@@ -14,6 +14,8 @@ import (
 func Manejadores() {
 	router := mux.NewRouter()
 	router.HandleFunc("/registro", middleware.ChequeoDB(routers.Registro)).Methods("POST")
+	router.HandleFunc("/login", middleware.ChequeoDB(routers.Login)).Methods("POST")
+	router.HandleFunc("/verperfil", middleware.ChequeoDB(middleware.ValidoJWT(routers.VerPerfil))).Methods("GET")
 	PORT := os.Getenv("PORT")
 	if PORT == "" {
 		PORT = "3000"
